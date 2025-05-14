@@ -1,5 +1,9 @@
 name: data-to-json
 
+# 1) 이 블록을 최상단에 추가
+permissions:
+  contents: write
+
 on:
   push:
     paths:
@@ -13,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          # 기본 토큰 사용(푸시 권한 포함)
+          # 기본 GITHUB_TOKEN 에 쓰기 권한을 유지
           persist-credentials: true  
 
       - name: Convert data_raw.txt to data.json
@@ -44,8 +48,7 @@ jobs:
           with open("data.json", "w", encoding="utf-8") as f:
               json.dump(result, f, ensure_ascii=False, indent=4)
           python3 convert.py
-
-      - name: Commit and Push JSON
+      - name: Commit & Push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
