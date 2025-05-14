@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="styles.css?v=1">
 <body>
     <!-- 고정된 로고 -->
+
+    <div id="loader">
+        <video id="loader-video" autoplay muted loop>
+          <source src="photos/main_video_2.mp4" type="video/mp4">
+        </video>
+        <div id="loader-text">
+          <p>달바글로벌</p>
+          <p>25. 05. 22 상장</p>
+          <p>보유주수 확인</p>
+        </div>
+      </div>
+
 <div class="logo">
     <a href="index.html">
       <img src="photos/logo_b.svg" alt="로고" />
@@ -159,6 +171,19 @@ function onScrollReveal() {
 
 window.addEventListener('scroll', onScrollReveal);
 window.addEventListener('load', onScrollReveal);
+
+window.addEventListener('DOMContentLoaded', () => {
+  const loader = document.getElementById('loader');
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+    // opacity 트랜지션이 끝난 뒤 제거
+    loader.addEventListener('transitionend', () => {
+      loader.remove();
+    }, { once: true });
+    // 클래스 토글로 hide 상태 적용
+    setTimeout(() => loader.classList.add('hide'), 0);
+  }, 3000);
+});
   </script>
 </body>
 </html>
