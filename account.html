@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="달바(d'Alba)"> 
+    <meta property="og:image" content="https://i.ibb.co/cK8pGxH6/image.png">
+    <meta property="og:description" content="더 프리미엄 달바가 코스피에 상장합니다">
+    <link rel="icon" href="photos/favicon.png">
+    <title>달바(d'Alba) - 보유 어카운트</title>
+    <link rel="stylesheet" href="styles.css?v=1">
+<body>
+    <!-- 고정된 로고 -->
+<div class="logo">
+    <a href="index.html">
+      <img src="photos/logo_b.svg" alt="로고" />
+    </a>
+  </div>
+
+    <!-- 🔲 검정 배너 -->
+    <div class="black-banner reveal">
+        <div class="banner-text">
+          <p>달바글로벌의 보유주수 확인 서비스를 이용 중이시라면</p>
+          <p>주식ㆍ사채 등의 전자등록에 관한 법률에 의해 보호됩니다.</p>
+          <p>주주님들의 앞날을 축원합니다.</p>
+        </div>
+        <div class="banner-image">
+          <img src="photos/cloudsec.png" alt="배너 이미지">
+        </div>
+      </div>
+
+      <!-- 이미지 배너 -->
+<div class="image-banner reveal">
+    <img src="photos/accountbanner.png" alt="이미지 배너" />
+  </div>
+
+  <div class="account-container reveal">
+    <h1>보유 주식 정보</h1>
+  
+    <div class="info-item reveal" id="userName">
+      <span class="label">이름</span>
+      <span class="value"></span>
+    </div>
+  
+    <div class="info-item reveal" id="userCombo">
+      <span class="label">증권사</span>
+      <span class="value"></span>
+    </div>
+  
+    <div class="info-item reveal" id="userAccount">
+      <span class="label">계좌번호</span>
+      <span class="value"></span>
+    </div>
+  
+    <div class="info-item reveal" id="stockPrice">
+      <span class="label">1주당 가격</span>
+      <span class="value"></span>
+    </div>
+  
+    <div class="info-item reveal" id="sharesOwned">
+      <span class="label">보유 주식 수</span>
+      <span class="value"></span>
+    </div>
+  
+    <div class="info-item reveal" id="totalValue">
+      <span class="label">총 평가금액</span>
+      <span class="value"></span>
+    </div>
+  </div>  
+
+  <!-- 진행상황 섹션 -->
+<section class="progress-section reveal">
+    <h1>진행상황 안내</h1>
+    <div class="progress-items reveal">
+      <div class="item reveal"><img src="photos/step1.png" alt="Step 1"></div>
+      <div class="item reveal"><img src="photos/step2.png" alt="Step 2"></div>
+      <div class="item active reveal"><img src="photos/step3.png" alt="Step 3"></div>
+      <div class="item reveal"><img src="photos/step4.png" alt="Step 4"></div>
+    </div>
+  </section>
+
+      <!-- 푸터 섹션 -->
+      <footer class="site-footer">
+        <!-- 로고 -->
+        <div class="footer-logo">
+            <a href="index.html">
+              <img src="photos/logo_b.svg" alt="달바 로고" />
+            </a>
+          </div>
+    
+        <!-- Legal & Policy -->
+        <div class="footer-menu">
+          <div class="menu-group legal">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="agreement.html">Terms of Use</a></li>
+              <li><a href="private.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+    
+          <!-- Social -->
+          <div class="menu-group social">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="https://www.instagram.com/dalba_piedmont/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://ko-kr.facebook.com/dalbakorea/" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="https://www.youtube.com/c/dAlba" target="_blank" rel="noopener">Youtube</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- 회사 정보 -->
+        <div class="footer-info">
+          <p><strong>주식회사 달바글로벌</strong> <span>서울특별시 마포구 마포대로 78, 12층 (도화동, 자람빌딩) (04031)</span></p>
+          <p><strong>CEO</strong> <span>반성연</span> <strong>Hosting by</strong> <span>NHN Commerce</span></p>
+          <p><strong>Information manager</strong> <span>유명한</span></p>
+          <p><strong>Business Registration No.</strong> <span>840-88-00333</span> <strong>Online Sales Reg No.</strong> <span>제2016-서울마포-0721호</span></p>
+          <p><span>© Bmonument.</span></p>
+        </div>
+      </footer>
+  
+
+  <script>
+async function loadUserData() {
+  const userData = sessionStorage.getItem('userData');
+  if (!userData) {
+    alert('접근 권한이 없습니다.');
+    window.location.href = 'index.html';
+    return;
+  }
+
+  try {
+    const user = JSON.parse(userData);
+
+    document.querySelector('#userName .value').textContent       = user.name;
+    document.querySelector('#userCombo .value').textContent      = user.combo;
+    document.querySelector('#userAccount .value').textContent    = user.account;
+    document.querySelector('#stockPrice .value').textContent     = `${user.stockPrice.toLocaleString()}원`;
+    document.querySelector('#sharesOwned .value').textContent    = `${user.sharesOwned}주`;
+    document.querySelector('#totalValue .value').textContent     = `${(user.stockPrice * user.sharesOwned).toLocaleString()}원`;
+
+  } catch (err) {
+    console.error(err);
+    alert('데이터 처리 중 오류가 발생했습니다.');
+  }
+}
+
+loadUserData();
+
+// 아주 간단한 scroll-reveal
+function onScrollReveal() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.05) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', onScrollReveal);
+window.addEventListener('load', onScrollReveal);
+  </script>
+</body>
+</html>

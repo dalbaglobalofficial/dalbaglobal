@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="달바(d'Alba)"> 
+    <meta property="og:image" content="https://i.ibb.co/cK8pGxH6/image.png">
+    <meta property="og:description" content="더 프리미엄 달바가 코스피에 상장합니다">
+    <link rel="icon" href="photos/favicon.png">
+    <title>달바(d'Alba) - d'Alba IPO</title>
+    <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<!-- 고정된 로고 -->
+<div class="logo">
+    <a href="index.html">
+      <img src="photos/logo_w.svg" alt="로고" />
+    </a>
+  </div>
+
+  <!-- 첫 번째 섹션: 큰 사진 + 텍스트 -->
+  <section class="hero">
+    <div class="small-text">Natural, but Powerful</div>
+    <div class="big-text">달바(d'Alba) 코스피 상장</div>
+    <div class="medium-text">더 프리미엄 달바가<br>코스피에 상장합니다</div>
+  </section>
+
+<!-- 로그인 섹션 -->
+<section class="login-section">
+    <h2>보유주수 확인</h2>
+    <form id="loginForm" class="login-form">
+      <!-- 이름 입력 필드 -->
+      <div class="input-container">
+        <label for="name" class="input-label">성함</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="이름을 입력하세요"
+          class="input-field"
+          required
+        />
+      </div>
+  
+      <!-- 증권사 콤보 선택 필드 -->
+      <div class="input-container">
+        <label for="combo" class="input-label">증권사</label>
+        <select id="combo" class="input-field" required>
+            <option value="== 선택 ==">== 선택 ==</option>
+            <option value="토스증권">토스증권</option>
+            <option value="카카오페이증권">카카오페이증권</option>
+            <option value="미래에셋증권">미래에셋증권</option>
+            <option value="키움증권">키움증권</option>
+            <option value="한국투자증권">한국투자증권</option>
+            <option value="신한투자증권">신한투자증권</option>
+            <option value="삼성증권">삼성증권</option>
+            <option value="KB증권">KB증권</option>
+            <option value="NH투자증권">NH투자증권</option>
+            <option value="나무증권">나무증권</option>
+            <option value="유안타증권">유안타증권</option>
+            <option value="대신증권">대신증권</option>
+            <option value="IBK투자증권">IBK투자증권</option>
+            <option value="하나증권">하나증권</option>
+            <option value="한화투자증권">한화투자증권</option>
+            <option value="유진투자증권">유진투자증권</option>
+            <option value="아이엠증권">아이엠증권</option>
+            <option value="교보증권">교보증권</option>
+            <option value="메리츠증권">메리츠증권</option>
+            <option value="SK증권">SK증권</option>
+            <option value="LS증권">LS증권</option>
+            <option value="현대차증권">현대차증권</option>
+            <option value="DB금융투자증권">DB금융투자증권</option>
+            <option value="우리투자증권">우리투자증권</option>
+            <option value="신영증권">신영증권</option>
+            <option value="다올투자증권">다올투자증권</option>
+            <option value="케이프투자증권">케이프투자증권</option>
+            <option value="BNK투자증권">BNK투자증권</option>
+            <option value="부국증권">부국증권</option>
+            <option value="상상인증권">상상인증권</option>
+        </select>
+    </div>
+  
+      <!-- 계좌번호 입력 필드 -->
+      <div class="input-container">
+        <label for="account" class="input-label">계좌번호</label>
+        <input
+          id="account"
+          type="tel"
+          pattern="\d+"
+          placeholder="'-' 없이 숫자만 입력"
+          class="input-field"
+          required
+        />
+      </div>
+  
+      <!-- 동의 체크박스 -->
+      <div class="checkbox-container">
+        <input
+          type="checkbox"
+          id="agree"
+          class="checkbox"
+          required
+        />
+        <label for="agree" class="checkbox-text">
+          증권에 대한 열람 및 등사에 동의합니다.
+        </label>
+      </div>
+  
+      <!-- 제출 버튼 -->
+      <button type="submit" class="submit-btn">확 인</button>
+    </form>
+  </section>
+
+
+  <!-- 제품 섹션 -->
+  <section class="product-section">
+    <button class="prod-btn left">&lt;</button>
+    <div class="prod-display">
+      <div class="slider">
+        <div class="slide"><img src="photos/pdt_1.png" alt="제품1"></div>
+        <div class="slide"><img src="photos/pdt_2-1.png" alt="제품2"></div>
+        <div class="slide"><img src="photos/pdt_3-1.png" alt="제품3"></div>
+        <div class="slide"><img src="photos/pdt_4.png" alt="제품4"></div>
+      </div>
+      <p id="productDesc">화이트 트러플 로얄 인텐시브 세럼</p>
+    </div>
+    <button class="prod-btn right">&gt;</button>
+  </section>
+
+    <!-- 푸터 섹션 -->
+    <footer class="site-footer">
+        <!-- 로고 -->
+        <div class="footer-logo">
+            <a href="index.html">
+              <img src="photos/logo_b.svg" alt="달바 로고" />
+            </a>
+          </div>
+    
+        <!-- Legal & Policy -->
+        <div class="footer-menu">
+          <div class="menu-group legal">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="agreement.html">Terms of Use</a></li>
+              <li><a href="private.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+    
+          <!-- Social -->
+          <div class="menu-group social">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="https://www.instagram.com/dalba_piedmont/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://ko-kr.facebook.com/dalbakorea/" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="https://www.youtube.com/c/dAlba" target="_blank" rel="noopener">Youtube</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- 회사 정보 -->
+        <div class="footer-info">
+          <p><strong>주식회사 달바글로벌</strong> <span>서울특별시 마포구 마포대로 78, 12층 (도화동, 자람빌딩) (04031)</span></p>
+          <p><strong>CEO</strong> <span>반성연</span> <strong>Hosting by</strong> <span>NHN Commerce</span></p>
+          <p><strong>Information manager</strong> <span>유명한</span></p>
+          <p><strong>Business Registration No.</strong> <span>840-88-00333</span> <strong>Online Sales Reg No.</strong> <span>제2016-서울마포-0721호</span></p>
+          <p><span>© Bmonument.</span></p>
+        </div>
+      </footer>
+
+  <!-- 분리된 스크립트 불러오기 -->
+  <script src="script.js"></script>
+</body>
+</html>

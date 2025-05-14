@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('font/PretendardVariable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  body, html {
+    height: 100%;
+    font-family: 'Pretendard', Arial, sans-serif;
+  }
+
+
+  
+  /* 고정된 로고 */
+  .logo {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+  
+  .logo img {
+    height: 35px; /* 필요하면 조절 가능 */
+  }
+  
+
+
+  /* 메인 섹션 */
+  .hero {
+    height: 100vh;
+    background-image: url('photos/antioxidant-1.jpg'); /* 큰 사진 위치 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    padding-top: 100px; /* 로고 공간 확보 */
+  }
+  
+  .hero .small-text {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .hero .big-text {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .hero .medium-text {
+    font-size: 15px;
+  }
+  
+
+
+/* 로그인 섹션 (배경 이미지 추가!) */
+.login-section {
+    position: relative;
+    background-image: url('photos/vegan-1.jpg'); /* 여기에 원하는 배경 이미지 경로로 바꿔주세요 */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 60px;
+    text-align: center;
+    color: #fff; /* 배경 위 글씨를 흰색으로 변경 */
+    overflow: hidden;
+  }
+  
+  /* 배경 위에 반투명 오버레이를 깔아주면 글씨가 더 잘 보여요 */
+  .login-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 검은 반투명 */
+    z-index: 0;
+  }
+  
+/* 섹션 내부 요소들은 z-index:1 로 올려서 오버레이 위에 표시하도록! */
+.login-section h2,
+.login-form,
+.login-section .input-container,
+.login-section .checkbox-container,
+.login-section .submit-btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* h2 색상 조정 */
+.login-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #fff;
+}
+  
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-container {
+    text-align: left;
+  }
+  
+  .input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .checkbox-text {
+    font-size: 13px;
+    color: #e6e6e6;
+  }
+  
+  .submit-btn {
+    padding: 12px;
+    background-color: #eaa200;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #d49500;
+  }
+
+
+
+/* 제품 섹션 */
+.product-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 50px;
+    
+    /* 배경 이미지 설정 */
+    background-image: url('photos/antioxidant-5.jpg');  /* 실제 경로로 바꿔주세요 */
+    background-size: cover;      /* 가로세로 꽉 채워요 */
+    background-position: center; /* 중앙 기준으로 위치 조정 */
+    background-repeat: no-repeat;
+  }
+
+  /* (선택) 배경 위에 반투명 오버레이 넣기 */
+.product-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* 원하면 투명도 조절 */
+    z-index: 0;
+  }
+
+  /* 기존 요소들은 오버레이 위에 올라오도록 z-index 지정 */
+.product-section > .prod-btn,
+.product-section .prod-display,
+.product-section .slider,
+#productDesc {
+  position: relative;
+  z-index: 1;
+}
+
+  .prod-btn {
+    background: none;
+    background-color: rgba(255, 255, 255, 0.6); /* 70% 불투명 회색 */
+    border: 0px solid #e9e9e9;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 20px;
+    width: 30px; height: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .prod-btn:hover { background-color: rgba(255, 255, 255, 1); }
+  
+  /* 시각 요소 컨테이너 */
+  .prod-display {
+    width: 300px;         /* 보여질 영역 크기 */
+    overflow: hidden;     /* 슬라이더 넘치는 부분 숨김 */
+    text-align: center;
+  }
+  
+  /* 슬라이더 – 4개의 슬라이드를 좌우로 나란히 배치 */
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;  /* 여기가 핵심: 이동 애니메이션 */
+  }
+  
+  .slide {
+    min-width: 100%;      /* 한 장씩 꽉 차게 */
+  }
+  
+  .slide img {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  
+  #productDesc {
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.8;
+  
+    /* 1) 수동 `<br>`은 살리되  
+          나머지는 컨테이너 폭에 맞춰 자동 줄바꿈 */
+    white-space: pre-line;
+  
+    /* 2) 너무 긴 단어(번호 같은)도 잘려서 한 줄에 남지 않게 */
+    word-break: break-word;
+  }
+  
+  
+
+  /* 푸터 섹션 */
+.site-footer {
+    background-color: #f5f5f5;
+    color: #000000;
+    padding: 40px 20px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  /* 푸터 로고 */
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+  .footer-logo img {
+    height: 40px;
+  }
+  
+  /* 메뉴 그룹 (Legal, Social) */
+  .footer-menu {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 30px;
+  }
+  .menu-group h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .menu-group ul {
+    list-style: none;
+    padding: 0;
+  }
+  .menu-group ul li {
+    margin-bottom: 6px;
+  }
+  .menu-group ul li span {
+    font-weight: 600; /* “Legal” 제목 대신 span 사용 */
+  }
+  .menu-group ul li a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .menu-group ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 회사 정보 */
+  .footer-info p {
+    margin-bottom: 8px;
+  }
+  .footer-info strong {
+    font-weight: 600;
+  }
+  .footer-info span {
+    font-weight: 300;
+  }
+
+
+
+
+
+
+  .black-banner {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* ← 핵심: 수직 가운데 정렬 */
+    padding: 48px 30px;   /* ← 위아래 패딩 더 크게 */
+    margin-top: 90px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    min-height: 120px;    /* ← 세로 높이 확보 */
+  }
+  
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 200;
+    line-height: 1.4;
+  }
+  
+  .banner-image img {
+    height: 50px;
+    object-fit: contain;
+  }
+
+
+
+  .image-banner {
+    background-color: #ffffff;  /* 양쪽 공백 채움 */
+    display: flex;
+    justify-content: center; /* 이미지 중앙 정렬 */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .image-banner img {
+    max-width: 100%;         /* 이미지가 화면 너비보다 크면 줄어듦 */
+    height: auto;            /* 비율 유지 */
+    display: block;
+  }
+  
+
+
+/* 컨테이너: 좌우 100% 폭 */
+.account-container {
+    width: 100%;               /* 좌우 꽉 채우기 */
+    margin: 0 auto 40px;       /* 위/아래 여백만, 좌우 auto는 없어도 center 역할 */
+    background-color: #f0f0f0;
+    padding: 32px 24px;
+    box-sizing: border-box;
+  }
+  
+  /* 제목 */
+  .account-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  /* info-item 박스: 고정 너비 또는 최대너비, 가운데 배치 */
+  .info-item {
+    display: flex;
+    align-items: center;
+    width: 360px;              /* 원하는 고정 너비 */
+    max-width: 90%;            /* 화면이 좁으면 90%까지 줄어듦 */
+    margin: 12px auto;         /* 좌우 auto로 가운데 정렬 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  /* 라벨 */
+  .info-item .label {
+    flex: 0 0 120px;
+    background-color: #000000;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* 값 */
+  .info-item .value {
+    flex: 1;
+    background-color: #fff;
+    color: #111;
+    padding: 8px 12px;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  /* 마지막 항목 강조 */
+  #totalValue .value {
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  
+
+  /* 진행상황 섹션 */
+.progress-section {
+    background-color: #fff;           /* 배경 흰색 */
+    padding: 0px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  /* 제목 (기존 h1 스타일과 동일) */
+  .progress-section h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 24px;
+  }
+  
+  /* 이미지 리스트 */
+  .progress-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+/* 이미지 크기 조절하고 블럭 중앙 정렬 */
+.progress-items .item img {
+    max-width: 80%;     /* 원하는 크기로 축소 */
+    height: auto;
+    display: block;
+    margin: 0 auto;     /* 좌우 자동 여백으로 가운데 정렬 */
+  }
+  
+  /* 활성(3번째) 항목 강조 애니메이션 */
+  .progress-items .item.active img {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* 펄스 애니메이션 정의 */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.015);
+      opacity: 0.8;
+    }
+  }
+  
+/* 리빌용 기본 상태 */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* 리빌 시 붙일 클래스: .visible */
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }  
+  
+
+
+  /* ────────────────────────────────── */
+/* 개인정보처리방침 섹션 */
+.policy-section {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 50px 24px;
+    box-sizing: border-box;
+  }
+  
+  .policy-section h1 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;     /* 가운데 정렬 */
+    color: #000;
+    margin-bottom: 16px;
+  }
+  
+  .policy-section hr {
+    border: none;
+    border-top: 1px solid #8d8d8d;  /* 연한 회색 선 */
+    margin: 0 auto 40px;         /* 위아래 여백, 가운데 정렬 */
+    width: 100%;                  /* 선 길이 조절 */
+  }
+  
+  .policy-content {
+    max-width: 800px;       /* 읽기 좋은 너비 */
+    margin: 0 auto;         /* 가운데 배치 */
+    text-align: left;       /* 본문은 왼쪽 정렬 */
+    line-height: 1.3;
+    color: #000000;
+    font-size: 11px;
+  }
+  
+  .policy-content p {
+    margin-bottom: 15px;    /* 문단 간격 */
+  }
+  /* ────────────────────────────────── */
+  
+  
