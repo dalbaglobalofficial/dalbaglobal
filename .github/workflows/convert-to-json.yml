@@ -1,4 +1,4 @@
-name: git1
+name: data-to-json
 
 on:
   push:
@@ -13,46 +13,42 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false
+          # 기본 토큰 사용(푸시 권한 포함)
+          persist-credentials: true  
 
       - name: Convert data_raw.txt to data.json
         run: |
-          echo 'import json' > convert.py
-          echo 'result = {"users": []}' >> convert.py
-          echo 'with open("data_raw.txt", "r", encoding="utf-8") as f:' >> convert.py
-          echo '    for line in f:' >> convert.py
-          echo '        line = line.strip()' >> convert.py
-          echo '        if not line:' >> convert.py
-          echo '            continue' >> convert.py
-          echo '        tokens = [token.strip() for token in line.split(",")]' >> convert.py
-          echo '        try:' >> convert.py
-          echo '            name = tokens[0]' >> convert.py
-          echo '            combo = tokens[1]' >> convert.py
-          echo '            account = tokens[2]' >> convert.py
-          echo '            sharesOwned = int(tokens[3])' >> convert.py
-          echo '        except Exception as e:' >> convert.py
-          echo '            continue' >> convert.py
-          echo '        result["users"].append({' >> convert.py
-          echo '            "name": name,' >> convert.py
-          echo '            "combo": combo,' >> convert.py
-          echo '            "account": account,' >> convert.py
-          echo '            "stockPrice": 66300,' >> convert.py
-          echo '            "sharesOwned": sharesOwned' >> convert.py
-          echo '        })' >> convert.py
-          echo 'with open("data.json", "w", encoding="utf-8") as f:' >> convert.py
-          echo '    json.dump(result, f, ensure_ascii=False, indent=4)' >> convert.py
+          cat > convert.py << 'PYCODE'
+          import json
+          result = {"users": []}
+          with open("data_raw.txt", "r", encoding="utf-8") as f:
+              for line in f:
+                  line = line.strip()
+                  if not line:
+                      continue
+                  tokens = [t.strip() for t in line.split(",")]
+                  if len(tokens) < 4:
+                      continue
+                  name, combo, account, shares = tokens[:4]
+                  try:
+                      sharesOwned = int(shares)
+                  except:
+                      continue
+                  result["users"].append({
+                      "name": name,
+                      "combo": combo,
+                      "account": account,
+                      "stockPrice": 66300,
+                      "sharesOwned": sharesOwned
+                  })
+          with open("data.json", "w", encoding="utf-8") as f:
+              json.dump(result, f, ensure_ascii=False, indent=4)
           python3 convert.py
 
-      - name: Commit changes
+      - name: Commit and Push JSON
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git commit -m "Auto-converted data_raw.txt to JSON" || echo "No changes to commit"
-
-      - name: Push changes
-        env:
-          GH_TOKEN: ${{ secrets.GIT1 }}
-        run: |
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
-          git push origin HEAD:main
+          git diff --quiet || git commit -m "chore: auto-convert data_raw.txt → data.json"
+          git push
