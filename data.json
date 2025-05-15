@@ -13,6 +13,167 @@
             "account": "11111111",
             "stockPrice": 66300,
             "sharesOwned": 200
+        },
+        {
+            "name": "■후이■",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "김충섭",
+            "combo": "키움증권",
+            "account": "5013908111",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "배종률",
+            "combo": "키움증권",
+            "account": "5195153698",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "성보경",
+            "combo": "삼성증권",
+            "account": "706556592501",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "주순호",
+            "combo": "토스증권",
+            "account": "13401025667",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "정현정",
+            "combo": "토스증권",
+            "account": "13401050219",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "유신",
+            "combo": "키움증권",
+            "account": "5510740210",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "이진수",
+            "combo": "키움증권",
+            "account": "40105135",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "김선우",
+            "combo": "유안타증권",
+            "account": "798539400131",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이성만",
+            "combo": "카카오페이증권",
+            "account": "02007822986",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이장희",
+            "combo": "키움증권",
+            "account": "53820900",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "차지훈",
+            "combo": "카카오페이증권",
+            "account": "02006726406",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이계화",
+            "combo": "KB증권",
+            "account": "20901762693",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "임원",
+            "combo": "미래에셋증권",
+            "account": "018225094004",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이근식",
+            "combo": "NH투자증권",
+            "account": "20101992922",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "■이해수■",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "민병조",
+            "combo": "미래에셋증권",
+            "account": "10699009342",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이준철",
+            "combo": "미래에셋증권",
+            "account": "210227914764",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "엄경용",
+            "combo": "한화투자증권",
+            "account": "04411339528",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이상엽",
+            "combo": "삼성증권",
+            "account": "710076071801",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "신동기",
+            "combo": "키움증권",
+            "account": "61950675",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이길문",
+            "combo": "미래에셋증권",
+            "account": "3881468260000",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이민영",
+            "combo": "KB증권",
+            "account": "84370101665086",
+            "stockPrice": 66300,
+            "sharesOwned": 3
         }
     ]
 }
