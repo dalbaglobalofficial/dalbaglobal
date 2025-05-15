@@ -120,6 +120,111 @@
             "sharesOwned": 3
         },
         {
+            "name": "■아영■",
+            "combo": "1",
+            "account": "1",
+            "stockPrice": 66300,
+            "sharesOwned": 1
+        },
+        {
+            "name": "조석열",
+            "combo": "유안타증권",
+            "account": "08301119580",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이정훈",
+            "combo": "KB증권",
+            "account": "32645096601",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김나정",
+            "combo": "신한투자증권",
+            "account": "08350396584",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "허현정",
+            "combo": "토스증권",
+            "account": "17801008252",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박경식",
+            "combo": "카카오페이증권",
+            "account": "02000764713",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "정진용",
+            "combo": "삼성증권",
+            "account": "1085716701",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "이정민",
+            "combo": "IBK투자증권",
+            "account": "51100086247",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "고우식",
+            "combo": "KB증권",
+            "account": "25799054001",
+            "stockPrice": 66300,
+            "sharesOwned": 23
+        },
+        {
+            "name": "김도연",
+            "combo": "키움증권",
+            "account": "51260893",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "천은지",
+            "combo": "NH나무증권",
+            "account": "20201362706",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "정영진",
+            "combo": "토스증권",
+            "account": "13701000778",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "지명구",
+            "combo": "토스증권",
+            "account": "11101032711",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "박수영",
+            "combo": "KB증권",
+            "account": "33045976401",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
+            "name": "김성하",
+            "combo": "NH투자증권",
+            "account": "20001653333",
+            "stockPrice": 66300,
+            "sharesOwned": 3
+        },
+        {
             "name": "■이해수■",
             "combo": "1",
             "account": "1",
