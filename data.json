@@ -489,6 +489,13 @@
             "account": "12801030053",
             "stockPrice": 66300,
             "sharesOwned": 1
+        },
+        {
+            "name": "구본명",
+            "combo": "KB증권",
+            "account": "20601741230",
+            "stockPrice": 66300,
+            "sharesOwned": 3
         }
     ]
 }
